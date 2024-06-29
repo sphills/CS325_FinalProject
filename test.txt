@@ -1,4 +1,4 @@
-This Afternoon, 2024-06-29T15:00:00-05:00, 82, Sunny
+This Afternoon, 2024-06-29T17:00:00-05:00, 82, Sunny
 Tonight, 2024-06-29T18:00:00-05:00, 58, Mostly Clear
 Sunday, 2024-06-30T06:00:00-05:00, 76, Slight Chance Rain Showers
 Sunday Night, 2024-06-30T18:00:00-05:00, 62, Mostly Cloudy then Chance Showers And Thunderstorms

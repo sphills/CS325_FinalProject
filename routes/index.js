@@ -8,9 +8,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET forecast page. */
-router.get('/forecast', function(req, res, next) {
+router.post('/forecast', function(req, res, next) {
   async function getData() {
-    const url = "https://api.weather.gov/points/39.7456,-97.0892";
+    const url = `https://api.weather.gov/points/${req.body.inputValue}`;
+    //const url = `https://api.weather.gov/points/39.7456,-97.0892`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -54,11 +55,12 @@ router.get('/forecast', function(req, res, next) {
   }
 
   getData().then((forecastUrl) => {
-    return getForecast(forecastUrl)
+    return getForecast(forecastUrl);
   }).then((json) => {
     return (forecastData = json);
   }).then((forecastData) => {
-    res.render('forecast', { data: forecastData.properties });
+    console.log(forecastData.properties.periods);
+    res.send({ data: forecastData.properties.periods });
   });
 
 });
