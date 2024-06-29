@@ -20,7 +20,8 @@ a {
 
 main {
   margin: 0 auto;
-  max-width: 80%;
+  width: 80%;
+  max-width: 120rem;
 }
 
 footer {
@@ -32,7 +33,8 @@ footer {
 .weather-header {
   background-color: white;
   margin: 0 auto;
-  max-width: 80%;
+  width: 80%;
+  max-width: 120rem;
 }
 
 .weather-header-title {

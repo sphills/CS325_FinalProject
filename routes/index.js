@@ -19,7 +19,7 @@ router.post('/forecast', function(req, res, next) {
       }
 
       const json = await response.json();
-      return json.properties.forecast;
+      return { forecast: json.properties.forecast, location: json.properties.relativeLocation };
     } catch (error) {
       console.error(error.message);
     }
@@ -27,7 +27,7 @@ router.post('/forecast', function(req, res, next) {
 
   async function getForecast(forecastUrl) {
     try {
-      const response = await fetch(forecastUrl);
+      const response = await fetch(forecastUrl.forecast);
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
@@ -48,6 +48,7 @@ router.post('/forecast', function(req, res, next) {
           // file written successfully
         }
       });
+      console.log(forecastUrl.location.properties.city + ", " + forecastUrl.location.properties.state);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -59,7 +60,7 @@ router.post('/forecast', function(req, res, next) {
   }).then((json) => {
     return (forecastData = json);
   }).then((forecastData) => {
-    console.log(forecastData.properties.periods);
+    //console.log(forecastData.properties.periods);
     res.send({ data: forecastData.properties.periods });
   });
 
