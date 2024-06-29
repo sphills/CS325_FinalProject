@@ -1,8 +1,11 @@
 extends layout
 
 block scripts
+  script(src='/javascripts/index.js' defer)
 
 block content
   main
-    label.lat-long-input-label(for='lat-long-input') Forecast by Latitude and Longitude
-    input.lat-long-input(id='lat-long-input' type='text' placeholder='Enter your desired latitude and longitude here')
+    form
+      label.lat-long-input-label(for='lat-long-input') Forecast by Latitude and Longitude
+      input.lat-long-input(id='lat-long-input' type='text' placeholder='Enter your desired latitude and longitude here')
+      input(type='submit' style="display: none;")
