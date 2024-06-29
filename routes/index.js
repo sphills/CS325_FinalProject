@@ -50,19 +50,13 @@ router.get('/', function(req, res, next) {
     }
   }
 
-  // getData().then((forecastUrl) => {
-  //   getForecast(forecastUrl).then((json) => {
-  //     forecastData = json;
-  //   });
-  // });
-
   getData().then((forecastUrl) => {
     return getForecast(forecastUrl)
   }).then((json) => {
     return (forecastData = json);
   }).then((forecastData) => {
     console.log("data = " + forecastData);
-    res.render('index', { title: forecastData.properties.periods[0].name });
+    res.render('index', { data: forecastData.properties });
   });
 
 });

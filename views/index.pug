@@ -4,5 +4,6 @@ block scripts
   script(src="/javascripts/index.js" defer)
 
 block content
-  h1= title
-  p(class="url" id="test-class") Welcome to #{title}
+  h1= data.periods[0].name
+  h2(class="time" id="test-class") Starting at #{data.periods[0].startTime}, the weather will be
+  p(class="forecast" id="forecast") #{data.periods[0].shortForecast} and #{data.periods[0].temperature}#{data.periods[0].temperatureUnit}
