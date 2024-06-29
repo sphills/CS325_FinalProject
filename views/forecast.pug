@@ -1,0 +1,11 @@
+extends layout
+
+block scripts
+
+block content
+  main.forecast-data(id='')
+    each period in data.periods
+      article.card
+        h1= period.name
+        h2(class='time' id='test-class')= `Starting at ${new Date(period.startTime)}, the weather will be`
+        p(class='forecast' id='forecast')= `${period.shortForecast} and ${period.temperature}${period.temperatureUnit}`

@@ -1,9 +1,8 @@
 extends layout
 
 block scripts
-  script(src="/javascripts/index.js" defer)
 
 block content
-  h1= data.periods[0].name
-  h2(class="time" id="test-class") Starting at #{data.periods[0].startTime}, the weather will be
-  p(class="forecast" id="forecast") #{data.periods[0].shortForecast} and #{data.periods[0].temperature}#{data.periods[0].temperatureUnit}
+  main
+    label.lat-long-input-label(for='lat-long-input') Forecast by Latitude and Longitude
+    input.lat-long-input(id='lat-long-input' type='text' placeholder='Enter your desired latitude and longitude here')

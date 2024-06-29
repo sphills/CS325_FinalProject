@@ -3,9 +3,12 @@ var express = require('express');
 var router = express.Router();
 var forecastData;
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
+  res.render('index');
+});
 
+/* GET forecast page. */
+router.get('/forecast', function(req, res, next) {
   async function getData() {
     const url = "https://api.weather.gov/points/39.7456,-97.0892";
     try {
@@ -31,7 +34,7 @@ router.get('/', function(req, res, next) {
       const json = await response.json();
       let forecastString = "";
       for (let i = 0; i < json.properties.periods.length; i++) {
-        forecastString += `${json.properties.periods[i].name} ${json.properties.periods[i].startTime} ${json.properties.periods[i].temperature} ${json.properties.periods[i].shortForecast}`;
+        forecastString += `${json.properties.periods[i].name}, ${json.properties.periods[i].startTime}, ${json.properties.periods[i].temperature}, ${json.properties.periods[i].shortForecast}`;
         if (Number(i) != Number(json.properties.periods.length)) {
           forecastString += "\n";
         }
@@ -55,8 +58,7 @@ router.get('/', function(req, res, next) {
   }).then((json) => {
     return (forecastData = json);
   }).then((forecastData) => {
-    console.log("data = " + forecastData);
-    res.render('index', { data: forecastData.properties });
+    res.render('forecast', { data: forecastData.properties });
   });
 
 });

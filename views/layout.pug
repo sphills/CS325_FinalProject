@@ -4,5 +4,11 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     block scripts
+
   body
+    header.weather-header
+      h2.weather-header-title sphills Weather Forecast
     block content
+
+  footer
+    p.footer-content= "©" + new Date().getFullYear() + " Sage Phillips"

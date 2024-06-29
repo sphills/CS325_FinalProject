@@ -1,9 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #333;
+  font: 1.6rem "Calibri", sans-serif;
+  background-image: linear-gradient(to right, #c5e5f5, #d4e9f9, #e1edfb, #edf2fc, #f6f7fd, #f6f7fd, #f6f7fd, #f6f7fd, #edf2fc, #e1edfb, #d4e9f9, #c5e5f5);
+  min-height: 100vh;
 }
 
 a {
   color: #00B7FF;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.weather-header {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.weather-header-title {
+  padding: 1.4rem;
+  box-shadow: 0 0 2px 2px #B2B2B2;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.lat-long-input-label {
+  font-size: 3.6rem;
+}
+
+.lat-long-input {
+  width: 100%;
+  font-size: 2.4rem;
+}
+
+.footer-content {
+  margin: 2rem;
+  text-align: center;
 }
