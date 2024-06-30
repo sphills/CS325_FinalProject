@@ -72,6 +72,8 @@ footer {
 
 .forecast-display {
   padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .forecast-location {
@@ -82,11 +84,24 @@ footer {
   border: 1px grey solid;
   border-radius: .8rem;
   overflow: hidden;
+  grid-column: span 2;
 }
 
 .forecast-chart-title {
   background-color: lightgrey;
   padding: 1rem;
+}
+
+.download-button {
+  justify-self: end;
+  background-color: lightcyan;
+  height: fit-content;
+  padding: .6rem 1.2rem;
+  border: 1px gray solid;
+  border-radius: .6rem;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .forecast-list {

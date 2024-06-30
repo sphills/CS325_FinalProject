@@ -9,7 +9,7 @@ form.addEventListener('submit', (event) => {
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log(JSON.stringify(data) === '{}');
+        console.log(data);
         const targetElement = document.querySelector('.forecast-display');
         if (targetElement.hasChildNodes()) {
             targetElement.replaceChildren();
@@ -19,6 +19,12 @@ form.addEventListener('submit', (event) => {
             location.className = 'forecast-location';
             location.innerText = (data.data.location.properties.city + ", " + data.data.location.properties.state);
             targetElement.appendChild(location);
+
+            let downloadLink = document.createElement('a');
+            downloadLink.className = 'download-button';
+            downloadLink.href = '/download';
+            downloadLink.innerText = 'Download this forecast';
+            targetElement.appendChild(downloadLink);
 
             let forecastChart = document.createElement('article');
             forecastChart.className = 'forecast-chart';

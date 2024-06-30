@@ -43,7 +43,7 @@ router.post('/forecast', function(req, res, next) {
         }
       }
 
-      fs.writeFile('./test.txt', forecastString, err => {
+      fs.writeFile('./forecast.csv', forecastString, err => {
         if (err) {
           console.error(err);
         } else {
@@ -51,6 +51,7 @@ router.post('/forecast', function(req, res, next) {
         }
       });
       json.location = forecastUrl.location;
+      //json.downloadLink = '';
       return json;
     } catch (error) {
       console.error(error.message);
@@ -65,6 +66,11 @@ router.post('/forecast', function(req, res, next) {
     res.send({ data: forecastData });
   });
 
+});
+
+router.get('/download', function (req, res, next) {
+  const file = `./forecast.csv`;
+  res.download(file);
 });
 
 module.exports = router;
