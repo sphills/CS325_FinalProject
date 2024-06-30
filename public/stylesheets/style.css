@@ -22,8 +22,9 @@ main {
   margin: 0 auto;
   width: 80%;
   max-width: 120rem;
-  height: 100vh;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 hr {
@@ -129,7 +130,11 @@ footer {
 
 }
 
-
+.reference-map {
+  width: 95%;
+  align-self: center;
+  margin: 2rem;
+}
 
 
 .footer-content {
