@@ -49,7 +49,6 @@ router.post('/forecast', function(req, res, next) {
         }
       });
       json.location = forecastUrl.location;
-      console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
