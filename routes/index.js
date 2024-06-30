@@ -26,16 +26,16 @@ router.post('/forecast', function(req, res, next) {
     }
   }
 
-  async function getForecast(forecastUrl) {
+  async function getForecast(forecastJSON) {
     try {
-      const response = await fetch(forecastUrl.forecast);
+      const response = await fetch(forecastJSON.forecast);
       if (!response.ok) {
-        res.send({ data: "error" });
-        //throw new Error(`Response status: ${response.status}`);
+        // res.send({ data: "error" });
+        throw new Error(`Response status: ${response.status}`);
       }
 
       const json = await response.json();
-      let forecastString = "";
+      let forecastString = `${forecastJSON.location.properties.city}, ${forecastJSON.location.properties.state}:\n`;
       for (let i = 0; i < json.properties.periods.length; i++) {
         forecastString += `${json.properties.periods[i].name}, ${json.properties.periods[i].startTime}, ${json.properties.periods[i].temperature}, ${json.properties.periods[i].shortForecast}`;
         if (Number(i) != Number(json.properties.periods.length)) {
@@ -50,8 +50,7 @@ router.post('/forecast', function(req, res, next) {
           // file written successfully
         }
       });
-      json.location = forecastUrl.location;
-      //json.downloadLink = '';
+      json.location = forecastJSON.location;
       return json;
     } catch (error) {
       console.error(error.message);
