@@ -1,14 +1,14 @@
-Tonight, 2024-06-29T22:00:00-05:00, 73, Chance Showers And Thunderstorms
-Sunday, 2024-06-30T06:00:00-05:00, 87, Chance Showers And Thunderstorms
-Sunday Night, 2024-06-30T18:00:00-05:00, 64, Slight Chance Showers And Thunderstorms then Partly Cloudy
-Monday, 2024-07-01T06:00:00-05:00, 84, Sunny
-Monday Night, 2024-07-01T18:00:00-05:00, 63, Mostly Clear
-Tuesday, 2024-07-02T06:00:00-05:00, 94, Sunny
-Tuesday Night, 2024-07-02T18:00:00-05:00, 73, Mostly Clear
-Wednesday, 2024-07-03T06:00:00-05:00, 97, Sunny then Chance Showers And Thunderstorms
+Tonight, 2024-06-29T22:00:00-05:00, 67, Slight Chance Showers And Thunderstorms then Partly Cloudy
+Sunday, 2024-06-30T06:00:00-05:00, 82, Sunny
+Sunday Night, 2024-06-30T18:00:00-05:00, 58, Mostly Clear
+Monday, 2024-07-01T06:00:00-05:00, 81, Mostly Sunny
+Monday Night, 2024-07-01T18:00:00-05:00, 65, Mostly Clear
+Tuesday, 2024-07-02T06:00:00-05:00, 93, Sunny
+Tuesday Night, 2024-07-02T18:00:00-05:00, 76, Mostly Clear then Slight Chance Showers And Thunderstorms
+Wednesday, 2024-07-03T06:00:00-05:00, 95, Chance Showers And Thunderstorms
 Wednesday Night, 2024-07-03T18:00:00-05:00, 74, Chance Showers And Thunderstorms
-Independence Day, 2024-07-04T06:00:00-05:00, 94, Chance Showers And Thunderstorms
-Thursday Night, 2024-07-04T18:00:00-05:00, 73, Chance Showers And Thunderstorms
-Friday, 2024-07-05T06:00:00-05:00, 91, Chance Showers And Thunderstorms
-Friday Night, 2024-07-05T18:00:00-05:00, 68, Chance Showers And Thunderstorms
-Saturday, 2024-07-06T06:00:00-05:00, 87, Chance Showers And Thunderstorms
+Independence Day, 2024-07-04T06:00:00-05:00, 89, Showers And Thunderstorms Likely
+Thursday Night, 2024-07-04T18:00:00-05:00, 74, Showers And Thunderstorms Likely then Chance Showers And Thunderstorms
+Friday, 2024-07-05T06:00:00-05:00, 89, Chance Showers And Thunderstorms
+Friday Night, 2024-07-05T18:00:00-05:00, 69, Chance Showers And Thunderstorms
+Saturday, 2024-07-06T06:00:00-05:00, 88, Slight Chance Showers And Thunderstorms

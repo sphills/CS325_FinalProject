@@ -26,6 +26,11 @@ main {
   background-color: white;
 }
 
+hr {
+  width: 95%;
+  margin: 0 auto;
+}
+
 footer {
   position: fixed;
   bottom: 0;

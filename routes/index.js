@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
 /* GET forecast page. */
 router.post('/forecast', function(req, res, next) {
   async function getData() {
-    const url = `https://api.weather.gov/points/${req.body.inputValue}`;
+    const regex = /\s/gi;
+    const url = `https://api.weather.gov/points/${req.body.inputValue.replaceAll(regex, "")}`;
     //const url = `https://api.weather.gov/points/39.7456,-97.0892`;
     try {
       const response = await fetch(url);
@@ -29,7 +30,8 @@ router.post('/forecast', function(req, res, next) {
     try {
       const response = await fetch(forecastUrl.forecast);
       if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
+        res.send({ data: "error" });
+        //throw new Error(`Response status: ${response.status}`);
       }
 
       const json = await response.json();
