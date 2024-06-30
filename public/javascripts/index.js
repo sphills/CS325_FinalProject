@@ -9,7 +9,11 @@ form.addEventListener('submit', (event) => {
     })
     .then((response) => response.json())
     .then((data) => {
-        data.data.forEach((element) => {
+        const targetElement = document.querySelector('.forecast-display');
+        if (targetElement.hasChildNodes()) {
+            targetElement.replaceChildren();
+        }
+        data.data.properties.periods.forEach((element) => {
             console.log(element);
         })
     });

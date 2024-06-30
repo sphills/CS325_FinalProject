@@ -48,7 +48,8 @@ router.post('/forecast', function(req, res, next) {
           // file written successfully
         }
       });
-      console.log(forecastUrl.location.properties.city + ", " + forecastUrl.location.properties.state);
+      json.location = forecastUrl.location;
+      console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -60,8 +61,7 @@ router.post('/forecast', function(req, res, next) {
   }).then((json) => {
     return (forecastData = json);
   }).then((forecastData) => {
-    //console.log(forecastData.properties.periods);
-    res.send({ data: forecastData.properties.periods });
+    res.send({ data: forecastData });
   });
 
 });
