@@ -16,12 +16,18 @@ form.addEventListener('submit', (event) => {
         let location = document.createElement('h2');
         location.innerText = (data.data.location.properties.city + ", " + data.data.location.properties.state);
         targetElement.appendChild(location);
-        let sevenDayForecast = document.createElement('article');
-        sevenDayForecast.className = 'forecast-chart';
+
+        let forecastChart = document.createElement('article');
+        forecastChart.className = 'forecast-chart';
 
         let forecastChartTitle = document.createElement('h2');
+        forecastChartTitle.className = 'forecast-chart-title';
         forecastChartTitle.innerText = "Detailed Forecast";
-        sevenDayForecast.appendChild(forecastChartTitle);
+        forecastChart.appendChild(forecastChartTitle);
+
+        let sevenDayForecast = document.createElement('ul');
+        sevenDayForecast.className = 'forecast-list';
+        forecastChart.appendChild(sevenDayForecast);
 
         data.data.properties.periods.forEach((element) => {
             let forecastPeriod = document.createElement('li');
@@ -31,16 +37,16 @@ form.addEventListener('submit', (event) => {
             forecastTime.className = 'forecast-name';
             forecastTime.innerText = element.name;
 
-            let forecastShortDescription = document.createElement('p');
-            forecastShortDescription.className = 'forecast-description';
-            forecastShortDescription.innerText = element.shortForecast;
+            let forecastDetailedDescription = document.createElement('p');
+            forecastDetailedDescription.className = 'forecast-description';
+            forecastDetailedDescription.innerText = element.detailedForecast;
 
             forecastPeriod.appendChild(forecastTime);
-            forecastPeriod.appendChild(forecastShortDescription);
+            forecastPeriod.appendChild(forecastDetailedDescription);
 
             sevenDayForecast.appendChild(forecastPeriod);
         });
 
-        targetElement.appendChild(sevenDayForecast);
+        targetElement.appendChild(forecastChart);
     });
 });
