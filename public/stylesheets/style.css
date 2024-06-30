@@ -67,12 +67,21 @@ footer {
 
 .forecast-display {
   padding: 2rem;
-  border: 2px grey solid;
+}
+
+.forecast-location {
+  margin-bottom: 1rem;
+}
+
+.forecast-chart {
+  border: 1px grey solid;
   border-radius: .8rem;
+  overflow: hidden;
 }
 
 .forecast-chart-title {
   background-color: lightgrey;
+  padding: 1rem;
 }
 
 .forecast-list {
@@ -83,10 +92,12 @@ footer {
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: 1rem;
+  padding: .5rem 0;
+  align-items: center;
 }
 
 .forecast-summary:nth-of-type(odd) {
-  background-color: lightskyblue;
+  background-color: #c5e5f5;
 }
 
 .forecast-name {

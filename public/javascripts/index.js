@@ -14,6 +14,7 @@ form.addEventListener('submit', (event) => {
             targetElement.replaceChildren();
         }
         let location = document.createElement('h2');
+        location.className = 'forecast-location';
         location.innerText = (data.data.location.properties.city + ", " + data.data.location.properties.state);
         targetElement.appendChild(location);
 
